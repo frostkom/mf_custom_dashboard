@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: MF Custom Dashboard
-Plugin URI: 
+Plugin URI: github.com/frostkom/mf_custom_dashboard
 Version: 1.1.2
 Author: Martin Fors
 Author URI: www.frostkom.se

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MF Slideshow\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-08 13:25+0100\n"
+"POT-Creation-Date: 2016-02-23 11:53+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: Martin Fors\n"
@@ -26,13 +26,13 @@ msgstr "Anpassa panel"
 msgid "Choose here"
 msgstr "Välj här"
 
-#: ../include/functions.php:103
+#: ../include/functions.php:100
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:117
-msgid "Permission"
-msgstr "Behörighet"
+#: ../include/functions.php:106
+msgid "Lowest Permission"
+msgstr "Lägsta behörighet"
 
 #~ msgid "Slideshows"
 #~ msgstr "Bildspel"

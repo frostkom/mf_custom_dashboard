@@ -96,29 +96,17 @@ function meta_boxes_custom_dashboard($meta_boxes)
 	}
 
 	$meta_boxes[] = array(
-		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
 		'id' => $meta_prefix."settings",
-
-		// Meta box title - Will appear at the drag and drop handle bar. Required.
 		'title' => __('Settings', 'lang_dashboard'),
-
-		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array('mf_custom_dashboard'),
-
-		// Where the meta box appear: normal (default), advanced, side. Optional.
 		'context' => 'side',
-
-		// Order of meta box: high (default), low. Optional.
 		'priority' => 'low',
-
-		// List of meta fields
 		'fields' => array(
 			array(
-				'name' => __('Permission', 'lang_dashboard'),
+				'name' => __('Lowest Permission', 'lang_dashboard'),
 				'id' => $meta_prefix."permission",
 				'type' => 'select',
-				'options' => $arr_permission, //array('text' => __("Text", 'lang_dashboard'),)
-				//'std' => $default_type,
+				'options' => $arr_permission,
 				//'multiple' => false,
 			),
 		)

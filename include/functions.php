@@ -58,6 +58,8 @@ function add_widget_custom_dashboard()
 {
 	global $wpdb;
 
+	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js");
+
 	$meta_prefix = "mf_cd_";
 
 	$result = $wpdb->get_results("SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND post_status = 'publish' ORDER BY menu_order ASC");

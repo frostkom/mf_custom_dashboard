@@ -25,19 +25,15 @@ function init_dashboard()
 
 function disable_default_custom_dashboard()
 {
-	remove_meta_box('dashboard_activity', 'dashboard', 'core');
-	remove_meta_box('dashboard_right_now', 'dashboard', 'core');
-	remove_meta_box('dashboard_recent_comments', 'dashboard', 'core');
-	remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');
-	remove_meta_box('dashboard_plugins', 'dashboard', 'core');
+	$option = get_option('setting_remove_widgets');
 
-	remove_meta_box('dashboard_quick_press', 'dashboard', 'core');
-	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'core');
-	remove_meta_box('dashboard_primary', 'dashboard', 'core');
-	remove_meta_box('dashboard_secondary', 'dashboard', 'core');
-
-	//remove_meta_box('custom-contact-forms-dashboard', 'dashboard', 'normal');
-	//remove_meta_box('wpfb-add-file-widget', 'dashboard', 'normal');
+	if(is_array($option))
+	{
+		foreach($option as $widget)
+		{
+			remove_meta_box($widget, 'dashboard', 'core');
+		}
+	}
 }
 
 function custom_dashboard_widget($post, $args)
@@ -56,9 +52,45 @@ function custom_dashboard_widget($post, $args)
 
 function add_widget_custom_dashboard()
 {
-	global $wpdb;
+	global $wp_meta_boxes, $wpdb;
 
-	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js");
+	if(IS_ADMIN && is_array($wp_meta_boxes['dashboard']))
+	{
+		$option = get_option('dashboard_registered_widget');
+
+		$arr_widgets = array();
+
+		foreach($wp_meta_boxes['dashboard'] as $widgets_1)
+		{
+			foreach($widgets_1 as $widgets_2)
+			{
+				foreach($widgets_2 as $key => $value)
+				{
+					$arr_widgets[$key] = $value['title'];
+				}
+			}
+		}
+
+		if(is_array($option))
+		{
+			foreach($option as $key => $value)
+			{
+				if(!is_array($value))
+				{
+					$arr_widgets[$key] = $value;
+				}
+			}
+		}
+
+		update_option('dashboard_registered_widget', $arr_widgets);
+	}
+
+	$user_data = get_userdata(get_current_user_id());
+
+	$setting_panel_heading = get_option('setting_panel_heading');
+	$setting_panel_heading = str_replace("[name]", $user_data->first_name, $setting_panel_heading);
+
+	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js", array('panel_heading' => $setting_panel_heading));
 
 	$meta_prefix = "mf_cd_";
 
@@ -84,17 +116,20 @@ function meta_boxes_custom_dashboard($meta_boxes)
 
 	$meta_prefix = "mf_cd_";
 
-	$roles = get_all_roles();
-
 	$arr_permission = array(
 		'' => "-- ".__("Choose here", 'lang_dashboard')." --"
 	);
+
+	$roles = get_all_roles();
 
 	foreach($roles as $key => $value)
 	{
 		$key = get_role_first_capability($key);
 
-		$arr_permission[$key] = __($value);
+		if(!isset($arr_permission[$key]) && $key != '')
+		{
+			$arr_permission[$key] = $value;
+		}
 	}
 
 	$meta_boxes[] = array(
@@ -115,4 +150,55 @@ function meta_boxes_custom_dashboard($meta_boxes)
 	);
 
 	return $meta_boxes;
+}
+
+function settings_custom_dashboard()
+{
+	$options_area = __FUNCTION__;
+
+	add_settings_section($options_area, "", $options_area."_callback", BASE_OPTIONS_PAGE);
+
+	$arr_settings = array();
+
+	$arr_settings["setting_panel_heading"] = __("Heading", 'lang_dashboard');
+	$arr_settings["setting_remove_widgets"] = __("Remove widgets", 'lang_dashboard');
+
+	foreach($arr_settings as $handle => $text)
+	{
+		add_settings_field($handle, $text, $handle."_callback", BASE_OPTIONS_PAGE, $options_area);
+
+		register_setting(BASE_OPTIONS_PAGE, $handle);
+	}
+}
+
+function settings_custom_dashboard_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+
+	echo settings_header($setting_key, __("Custom Dashboard", 'lang_dashboard'));
+}
+
+function setting_panel_heading_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option($setting_key);
+
+	echo show_textfield(array('name' => $setting_key, 'value' => $option, 'placeholder' => __("Welcome", 'lang_dashboard')." [name]"));
+}
+
+function setting_remove_widgets_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option($setting_key);
+
+	$arr_data = array();
+
+	$arr_widgets = get_option('dashboard_registered_widget');
+
+	foreach($arr_widgets as $key => $value)
+	{
+		$arr_data[] = array($key, $value);
+	}
+
+	echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'compare' => $option));
 }

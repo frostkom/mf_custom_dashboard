@@ -116,7 +116,7 @@ function meta_boxes_custom_dashboard($meta_boxes)
 
 	$meta_prefix = "mf_cd_";
 
-	$arr_permission = array(
+	/*$arr_permission = array(
 		'' => "-- ".__("Choose here", 'lang_dashboard')." --"
 	);
 
@@ -130,7 +130,9 @@ function meta_boxes_custom_dashboard($meta_boxes)
 		{
 			$arr_permission[$key] = $value;
 		}
-	}
+	}*/
+
+	$arr_permission = get_roles_for_select(array('add_choose_here' => true));
 
 	$meta_boxes[] = array(
 		'id' => $meta_prefix."settings",
@@ -191,13 +193,13 @@ function setting_remove_widgets_callback()
 	$setting_key = get_setting_key(__FUNCTION__);
 	$option = get_option($setting_key);
 
-	$arr_data = array();
-
 	$arr_widgets = get_option('dashboard_registered_widget');
+
+	$arr_data = array();
 
 	foreach($arr_widgets as $key => $value)
 	{
-		$arr_data[] = array($key, $value);
+		$arr_data[$key] = $value;
 	}
 
 	echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'compare' => $option));

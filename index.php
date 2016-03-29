@@ -1,11 +1,15 @@
 <?php
 /*
 Plugin Name: MF Custom Dashboard
-Plugin URI: github.com/frostkom/mf_custom_dashboard
+Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 2.0.4
+Version: 2.0.7
 Author: Martin Fors
 Author URI: http://frostkom.se
+Text Domain: lang_dashboard
+Domain Path: /lang
+
+GitHub Plugin URI: frostkom/mf_custom_dashboard
 */
 
 if(is_admin())

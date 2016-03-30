@@ -40,7 +40,7 @@ function custom_dashboard_widget($post, $args)
 {
 	global $wpdb;
 
-	$result = $wpdb->get_results("SELECT post_content FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND ID = '".$args['args']."'");
+	$result = $wpdb->get_results($wpdb->prepare("SELECT post_content FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND ID = '%d'", $args['args']));
 
 	foreach($result as $r)
 	{
@@ -116,24 +116,6 @@ function meta_boxes_custom_dashboard($meta_boxes)
 
 	$meta_prefix = "mf_cd_";
 
-	/*$arr_permission = array(
-		'' => "-- ".__("Choose here", 'lang_dashboard')." --"
-	);
-
-	$roles = get_all_roles();
-
-	foreach($roles as $key => $value)
-	{
-		$key = get_role_first_capability($key);
-
-		if(!isset($arr_permission[$key]) && $key != '')
-		{
-			$arr_permission[$key] = $value;
-		}
-	}*/
-
-	$arr_permission = get_roles_for_select(array('add_choose_here' => true));
-
 	$meta_boxes[] = array(
 		'id' => $meta_prefix."settings",
 		'title' => __('Settings', 'lang_dashboard'),
@@ -145,7 +127,7 @@ function meta_boxes_custom_dashboard($meta_boxes)
 				'name' => __('Lowest Permission', 'lang_dashboard'),
 				'id' => $meta_prefix."permission",
 				'type' => 'select',
-				'options' => $arr_permission,
+				'options' => get_roles_for_select(array('add_choose_here' => true)),
 				//'multiple' => false,
 			),
 		)

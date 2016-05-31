@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-27 15:34+0100\n"
+"POT-Creation-Date: 2016-05-31 08:20+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -19,32 +19,73 @@ msgstr ""
 #: ../include/functions.php:6
 #: ../include/functions.php:7
 #: ../include/functions.php:8
-#: ../include/functions.php:162
+#: ../include/functions.php:203
 msgid "Custom Dashboard"
 msgstr "Anpassa panel"
 
-#: ../include/functions.php:121
+#: ../include/functions.php:127
+#: ../include/functions.php:136
+msgid "Choose here"
+msgstr "Välj här"
+
+#: ../include/functions.php:128
+msgid "Left"
+msgstr "Vänster"
+
+#: ../include/functions.php:129
+msgid "Right"
+msgstr "Höger"
+
+#: ../include/functions.php:137
+msgid "High"
+msgstr "Högt"
+
+#: ../include/functions.php:138
+msgid "Default"
+msgstr "Standard"
+
+#: ../include/functions.php:139
+msgid "Low"
+msgstr "Lågt"
+
+#: ../include/functions.php:151
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:127
+#: ../include/functions.php:157
+#: ../include/functions.php:243
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:147
+#: ../include/functions.php:163
+#: ../include/functions.php:244
+msgid "Column"
+msgstr "Kolumn"
+
+#: ../include/functions.php:169
+#: ../include/functions.php:245
+msgid "Priority"
+msgstr "Prioritet"
+
+#: ../include/functions.php:188
 msgid "Heading"
 msgstr "Rubrik"
 
-#: ../include/functions.php:148
+#: ../include/functions.php:189
 msgid "Remove widgets"
 msgstr "Dölj widgets"
 
-#: ../include/functions.php:170
+#: ../include/functions.php:211
 msgid "Welcome"
 msgstr "Välkommen"
 
-#~ msgid "Choose here"
-#~ msgstr "Välj här"
+#: ../include/functions.php:235
+msgid "There are no widgets to remove"
+msgstr "Det finns inga widgets att dölja"
+
+#, fuzzy
+#~ msgid "Permission"
+#~ msgstr "Lägsta behörighet"
 
 #~ msgid "Slideshows"
 #~ msgstr "Bildspel"
@@ -54,9 +95,6 @@ msgstr "Välkommen"
 
 #~ msgid "Parent"
 #~ msgstr "Förälder"
-
-#~ msgid "Height"
-#~ msgstr "Höjd"
 
 #~ msgid "Export"
 #~ msgstr "Exportera"
@@ -177,9 +215,6 @@ msgstr "Välkommen"
 #~ msgid "Max value"
 #~ msgstr "Högsta värde"
 
-#~ msgid "Default value"
-#~ msgstr "Standardvärde"
-
 #~ msgid "Value"
 #~ msgstr "Värde"
 
@@ -275,9 +310,6 @@ msgstr "Välkommen"
 #~ msgstr ""
 #~ "Det gick inte att skapa en mapp i uploads. Lägg till rätt behörigheter "
 #~ "för mappen uploads så att det går att skapa en undermapp"
-
-#~ msgid "There were no answers to export"
-#~ msgstr "Det fanns inga svar att exportera"
 
 #~ msgid "Row count"
 #~ msgstr "Antal rader"

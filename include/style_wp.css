@@ -1,0 +1,7 @@
+@media all
+{
+	#dashboard-widgets img
+	{
+		max-width: 100%;
+	}
+}

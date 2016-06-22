@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-31 08:20+0100\n"
+"POT-Creation-Date: 2016-06-22 11:31+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -19,67 +19,67 @@ msgstr ""
 #: ../include/functions.php:6
 #: ../include/functions.php:7
 #: ../include/functions.php:8
-#: ../include/functions.php:203
+#: ../include/functions.php:215
 msgid "Custom Dashboard"
 msgstr "Anpassa panel"
 
-#: ../include/functions.php:127
-#: ../include/functions.php:136
+#: ../include/functions.php:139
+#: ../include/functions.php:148
 msgid "Choose here"
 msgstr "Välj här"
 
-#: ../include/functions.php:128
+#: ../include/functions.php:140
 msgid "Left"
 msgstr "Vänster"
 
-#: ../include/functions.php:129
+#: ../include/functions.php:141
 msgid "Right"
 msgstr "Höger"
 
-#: ../include/functions.php:137
+#: ../include/functions.php:149
 msgid "High"
 msgstr "Högt"
 
-#: ../include/functions.php:138
+#: ../include/functions.php:150
 msgid "Default"
 msgstr "Standard"
 
-#: ../include/functions.php:139
+#: ../include/functions.php:151
 msgid "Low"
 msgstr "Lågt"
 
-#: ../include/functions.php:151
+#: ../include/functions.php:163
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:157
-#: ../include/functions.php:243
+#: ../include/functions.php:169
+#: ../include/functions.php:255
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:163
-#: ../include/functions.php:244
+#: ../include/functions.php:175
+#: ../include/functions.php:256
 msgid "Column"
 msgstr "Kolumn"
 
-#: ../include/functions.php:169
-#: ../include/functions.php:245
+#: ../include/functions.php:181
+#: ../include/functions.php:257
 msgid "Priority"
 msgstr "Prioritet"
 
-#: ../include/functions.php:188
+#: ../include/functions.php:200
 msgid "Heading"
 msgstr "Rubrik"
 
-#: ../include/functions.php:189
+#: ../include/functions.php:201
 msgid "Remove widgets"
 msgstr "Dölj widgets"
 
-#: ../include/functions.php:211
+#: ../include/functions.php:223
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: ../include/functions.php:235
+#: ../include/functions.php:247
 msgid "There are no widgets to remove"
 msgstr "Det finns inga widgets att dölja"
 

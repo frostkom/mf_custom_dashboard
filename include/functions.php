@@ -43,13 +43,19 @@ function widget_custom_dashboard($post, $args)
 {
 	global $wpdb;
 
-	$result = $wpdb->get_results($wpdb->prepare("SELECT post_content FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND ID = '%d'", $args['args']));
+	$result = $wpdb->get_results($wpdb->prepare("SELECT ID, post_content FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND ID = '%d'", $args['args']));
 
 	foreach($result as $r)
 	{
+		$post_id = $r->ID;
 		$post_content = $r->post_content;
 
 		echo apply_filters('the_content', $post_content);
+
+		if(IS_ADMIN)
+		{
+			echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='fa fa-lg fa-edit'></i></a>";
+		}
 	}
 }
 

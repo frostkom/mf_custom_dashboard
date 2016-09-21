@@ -245,7 +245,7 @@ function setting_remove_widgets_callback()
 			$arr_data[$key] = ($value != '' ? $value : $key);
 		}
 
-		echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'compare' => $option));
+		echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'value' => $option));
 	}
 
 	else

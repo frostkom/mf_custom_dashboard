@@ -48,13 +48,16 @@ function widget_custom_dashboard($post, $args)
 	foreach($result as $r)
 	{
 		$post_id = $r->ID;
-		$post_content = $r->post_content;
+		$post_content = trim(apply_filters('the_content', $r->post_content));
 
-		echo apply_filters('the_content', $post_content);
-
-		if(IS_ADMIN)
+		if($post_content != '')
 		{
-			echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='fa fa-lg fa-edit'></i></a>";
+			echo $post_content;
+
+			if(IS_ADMIN)
+			{
+				echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='fa fa-lg fa-edit'></i></a>";
+			}
 		}
 	}
 }

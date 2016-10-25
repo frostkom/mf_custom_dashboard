@@ -24,4 +24,14 @@ jQuery(function($)
 
 		$('#' + dom_id).remove();
 	}
+
+	if($('#dashboard-widgets .inside').length == 0)
+	{
+		$('#dashboard-widgets .empty-container').parent('.postbox-container').remove();
+
+		if(script_custom_dashboard.panel_heading != '' && $('#welcome-panel').hasClass('hidden'))
+		{
+			$('.wrap > h1').addClass('align_center');
+		}
+	}
 });

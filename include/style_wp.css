@@ -1,9 +1,18 @@
 @media all
 {
-	.empty-container
+	.wrap > h1.align_center
+	{
+		font-size: 3em;
+		left: 50%;
+		position: absolute;
+		top: 5em;
+		transform: translate(-50%, 0);
+	}
+
+	/*.empty-container
 	{
 		display: none;
-	}
+	}*/
 
 	#dashboard-widgets img
 	{

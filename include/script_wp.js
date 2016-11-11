@@ -29,7 +29,7 @@ jQuery(function($)
 	{
 		$('#dashboard-widgets .empty-container').parent('.postbox-container').remove();
 
-		if(script_custom_dashboard.panel_heading != '' && $('#welcome-panel').hasClass('hidden'))
+		if(script_custom_dashboard.panel_heading != '' && $('#welcome-panel').length == 0 || $('#welcome-panel').hasClass('hidden'))
 		{
 			$('.wrap > h1').addClass('align_center');
 		}

@@ -5,9 +5,19 @@
 		font-size: 3em;
 		left: 50%;
 		position: absolute;
+		text-align: center;
 		top: 5em;
 		transform: translate(-50%, 0);
 	}
+
+		.wrap > h1.align_center p
+		{
+			display: inline-block;
+			font-size: .4em;
+			font-weight: normal;
+			margin-top: 1em;
+			width: 70%;
+		}
 
 	/*.empty-container
 	{

@@ -1,8 +1,10 @@
 jQuery(function($)
 {
+	var dom_h1 = $('.wrap > h1');
+
 	if(script_custom_dashboard.panel_heading != '')
 	{
-		$('.wrap > h1').text(script_custom_dashboard.panel_heading);
+		dom_h1.text(script_custom_dashboard.panel_heading);
 	}
 
 	$('#dashboard-widgets .inside').each(function()
@@ -31,7 +33,12 @@ jQuery(function($)
 
 		if(script_custom_dashboard.panel_heading != '' && $('#welcome-panel').length == 0 || $('#welcome-panel').hasClass('hidden'))
 		{
-			$('.wrap > h1').addClass('align_center');
+			dom_h1.addClass('align_center');
+
+			if(script_custom_dashboard.panel_quote != '')
+			{
+				dom_h1.append("<p>" + script_custom_dashboard.panel_quote + "</p>");
+			}
 		}
 	}
 });

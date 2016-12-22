@@ -62,6 +62,31 @@ function widget_custom_dashboard($post, $args)
 	}
 }
 
+function get_quotes()
+{
+	return array(
+		__("I am so blessed to have you in my life.", 'lang_dashboard'),
+		__("Well, you look nice today!", 'lang_dashboard'),
+		__("I will try not to disappoint you today, but if I do, please don't tell my master.", 'lang_dashboard'),
+		__("A day without sunshine is like, you know, night.", 'lang_dashboard'),
+		__("My fake plants died because I did not pretend to water them.", 'lang_dashboard'),
+		__("Remember: no matter where you go, there you are.", 'lang_dashboard'),
+		__("Let's do something fun while we are here.", 'lang_dashboard'),
+		__("Thank God you are here, I have been so lonely.", 'lang_dashboard'),
+		__("People who think they know everything are a great annoyance to those of us who do.", 'lang_dashboard'),
+		__("Having trouble finding someone? Try turning off the Internet and you will probably hear from them.", 'lang_dashboard'),
+		//__("", 'lang_dashboard'),
+	);
+}
+
+function get_random_quote()
+{
+	$arr_quotes = get_quotes();
+	$int_quote_amount = count($arr_quotes);
+
+	return $arr_quotes[mt_rand(0, ($int_quote_amount - 1))];
+}
+
 function add_widget_custom_dashboard()
 {
 	global $wp_meta_boxes, $wpdb;
@@ -108,10 +133,19 @@ function add_widget_custom_dashboard()
 	$setting_panel_heading = get_option('setting_panel_heading');
 	$setting_panel_heading = str_replace("[name]", $user_data->first_name, $setting_panel_heading);
 
+	$panel_quote = "";
+
+	$setting_panel_quote = get_option_or_default('setting_panel_quote', 'yes');
+
+	if($setting_panel_quote == 'yes')
+	{
+		$panel_quote = get_random_quote();
+	}
+
 	$setting_remove_widgets = get_option('setting_remove_widgets');
 
 	wp_enqueue_style('style_custom_dashboard', plugin_dir_url(__FILE__)."style_wp.css");
-	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets));
+	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js", array('panel_heading' => $setting_panel_heading, 'panel_quote' => $panel_quote, 'remove_widgets' => $setting_remove_widgets));
 
 	$meta_prefix = "mf_cd_";
 
@@ -207,6 +241,7 @@ function settings_custom_dashboard()
 	$arr_settings = array();
 
 	$arr_settings["setting_panel_heading"] = __("Heading", 'lang_dashboard');
+	$arr_settings["setting_panel_quote"] = __("Show random quote", 'lang_dashboard');
 	$arr_settings["setting_remove_widgets"] = __("Remove widgets", 'lang_dashboard');
 
 	foreach($arr_settings as $handle => $text)
@@ -230,6 +265,14 @@ function setting_panel_heading_callback()
 	$option = get_option($setting_key);
 
 	echo show_textfield(array('name' => $setting_key, 'value' => $option, 'placeholder' => __("Welcome", 'lang_dashboard')." [name]"));
+}
+
+function setting_panel_quote_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option_or_default($setting_key, 'yes');
+
+	echo show_select(array('data' => get_yes_no_for_select(), 'name' => $setting_key, 'value' => $option));
 }
 
 function setting_remove_widgets_callback()

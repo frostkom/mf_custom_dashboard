@@ -197,8 +197,6 @@ function get_priority_for_select()
 
 function meta_boxes_custom_dashboard($meta_boxes)
 {
-	global $wpdb;
-
 	$meta_prefix = "mf_cd_";
 
 	$meta_boxes[] = array(
@@ -240,9 +238,9 @@ function settings_custom_dashboard()
 
 	$arr_settings = array();
 
-	$arr_settings["setting_panel_heading"] = __("Heading", 'lang_dashboard');
-	$arr_settings["setting_panel_quote"] = __("Show random quote", 'lang_dashboard');
-	$arr_settings["setting_remove_widgets"] = __("Remove widgets", 'lang_dashboard');
+	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
+	$arr_settings['setting_panel_quote'] = __("Show random quote", 'lang_dashboard');
+	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
 
 	foreach($arr_settings as $handle => $text)
 	{

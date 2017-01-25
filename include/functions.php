@@ -195,6 +195,15 @@ function get_priority_for_select()
 	);
 }
 
+function has_dashboard_widgets()
+{
+	global $wpdb;
+
+	$wpdb->get_results("SELECT ID FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND post_status = 'publish' LIMIT 0, 1");
+
+	return ($wpdb->num_rows > 0 ? true : false);
+}
+
 function meta_boxes_custom_dashboard($meta_boxes)
 {
 	$meta_prefix = "mf_cd_";
@@ -239,7 +248,12 @@ function settings_custom_dashboard()
 	$arr_settings = array();
 
 	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
-	$arr_settings['setting_panel_quote'] = __("Show random quote", 'lang_dashboard');
+
+	if(has_dashboard_widgets() == false)
+	{
+		$arr_settings['setting_panel_quote'] = __("Show quote", 'lang_dashboard');
+	}
+
 	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
 
 	foreach($arr_settings as $handle => $text)

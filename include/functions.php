@@ -12,6 +12,7 @@ function init_dashboard()
 		'labels' => $labels,
 		'public' => false,
 		'show_ui' => true,
+		'exclude_from_search' => true,
 		'menu_position' => 99,
 		'supports' => array('title', 'editor'),
 		'hierarchical' => true,

@@ -247,7 +247,6 @@ function settings_custom_dashboard()
 	add_settings_section($options_area, "", $options_area."_callback", BASE_OPTIONS_PAGE);
 
 	$arr_settings = array();
-
 	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
 
 	if(has_dashboard_widgets() == false)
@@ -257,12 +256,7 @@ function settings_custom_dashboard()
 
 	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
 
-	foreach($arr_settings as $handle => $text)
-	{
-		add_settings_field($handle, $text, $handle."_callback", BASE_OPTIONS_PAGE, $options_area);
-
-		register_setting(BASE_OPTIONS_PAGE, $handle);
-	}
+	show_settings_fields(array('area' => $options_area, 'settings' => $arr_settings));
 }
 
 function settings_custom_dashboard_callback()

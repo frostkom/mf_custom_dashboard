@@ -212,7 +212,7 @@ function meta_boxes_custom_dashboard($meta_boxes)
 	$meta_boxes[] = array(
 		'id' => $meta_prefix.'settings',
 		'title' => __("Settings", 'lang_dashboard'),
-		'pages' => array('mf_custom_dashboard'),
+		'post_types' => array('mf_custom_dashboard'),
 		'context' => 'side',
 		'priority' => 'low',
 		'fields' => array(

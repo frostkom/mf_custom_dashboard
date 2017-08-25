@@ -145,8 +145,10 @@ function add_widget_custom_dashboard()
 
 	$setting_remove_widgets = get_option('setting_remove_widgets');
 
-	mf_enqueue_style('style_custom_dashboard', plugin_dir_url(__FILE__)."style_wp.css", get_plugin_version(__FILE__));
-	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js", array('panel_heading' => $setting_panel_heading, 'panel_quote' => $panel_quote, 'remove_widgets' => $setting_remove_widgets), get_plugin_version(__FILE__));
+	$plugin_version = get_plugin_version(__FILE__);
+
+	mf_enqueue_style('style_custom_dashboard', plugin_dir_url(__FILE__)."style_wp.css", $plugin_version);
+	mf_enqueue_script('script_custom_dashboard', plugin_dir_url(__FILE__)."script_wp.js", array('panel_heading' => $setting_panel_heading, 'panel_quote' => $panel_quote, 'remove_widgets' => $setting_remove_widgets), $plugin_version);
 
 	$meta_prefix = "mf_cd_";
 

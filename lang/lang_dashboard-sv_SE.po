@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-24 09:55+0100\n"
+"POT-Creation-Date: 2017-08-25 16:03+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 #: ../include/functions.php:6
 #: ../include/functions.php:7
 #: ../include/functions.php:8
-#: ../include/functions.php:266
+#: ../include/functions.php:268
 msgid "Custom Dashboard"
 msgstr "Anpassa panel"
 
@@ -63,67 +63,67 @@ msgstr "Människor som tror att dom vet allt är så irriterande för oss som g�
 msgid "Having trouble finding someone? Try turning off the Internet and you will probably hear from them."
 msgstr "Problem att hitta någon? Testa att stänga av Internet så kommer du troligen höra var dom är."
 
-#: ../include/functions.php:183
-#: ../include/functions.php:192
+#: ../include/functions.php:185
+#: ../include/functions.php:194
 msgid "Choose here"
 msgstr "Välj här"
 
-#: ../include/functions.php:184
+#: ../include/functions.php:186
 msgid "Left"
 msgstr "Vänster"
 
-#: ../include/functions.php:185
+#: ../include/functions.php:187
 msgid "Right"
 msgstr "Höger"
 
-#: ../include/functions.php:193
+#: ../include/functions.php:195
 msgid "High"
 msgstr "Högt"
 
-#: ../include/functions.php:194
+#: ../include/functions.php:196
 msgid "Default"
 msgstr "Standard"
 
-#: ../include/functions.php:195
+#: ../include/functions.php:197
 msgid "Low"
 msgstr "Lågt"
 
-#: ../include/functions.php:214
+#: ../include/functions.php:216
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:220
-#: ../include/functions.php:314
+#: ../include/functions.php:222
+#: ../include/functions.php:316
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:226
-#: ../include/functions.php:315
+#: ../include/functions.php:228
+#: ../include/functions.php:317
 msgid "Column"
 msgstr "Kolumn"
 
-#: ../include/functions.php:232
-#: ../include/functions.php:316
+#: ../include/functions.php:234
+#: ../include/functions.php:318
 msgid "Priority"
 msgstr "Prioritet"
 
-#: ../include/functions.php:250
+#: ../include/functions.php:252
 msgid "Heading"
 msgstr "Rubrik"
 
-#: ../include/functions.php:254
+#: ../include/functions.php:256
 msgid "Show quote"
 msgstr "Visa citat"
 
-#: ../include/functions.php:257
+#: ../include/functions.php:259
 msgid "Remove widgets"
 msgstr "Dölj widgets"
 
-#: ../include/functions.php:274
+#: ../include/functions.php:276
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: ../include/functions.php:306
+#: ../include/functions.php:308
 msgid "There are no widgets to remove"
 msgstr "Det finns inga widgets att dölja"
 

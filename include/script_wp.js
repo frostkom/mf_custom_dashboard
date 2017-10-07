@@ -36,11 +36,6 @@ jQuery(function($)
 			dom_h1.addClass('align_center');
 
 			$('#dashboard-widgets-wrap').hide();
-
-			if(script_custom_dashboard.panel_quote != '')
-			{
-				dom_h1.append("<p>" + script_custom_dashboard.panel_quote + "</p>");
-			}
 		}
 	}
 });

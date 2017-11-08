@@ -21,10 +21,10 @@
 			width: 70%;
 		}
 
-	/*.empty-container
+	.postbox-container .empty-container:first-child
 	{
 		display: none;
-	}*/
+	}
 
 	#dashboard-widgets img
 	{

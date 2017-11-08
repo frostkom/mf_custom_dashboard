@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.3.0
+Version: 3.3.1
 Author: Martin Fors
 Author URI: http://frostkom.se
 Text Domain: lang_dashboard

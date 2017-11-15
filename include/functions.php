@@ -10,11 +10,12 @@ function init_dashboard()
 
 	$args = array(
 		'labels' => $labels,
-		'public' => false,
-		'show_ui' => true,
+		'public' => true,
+		'show_in_menu' => false,
+		'show_in_nav_menus' => false,
 		'exclude_from_search' => true,
-		'menu_position' => 99,
-		'menu_icon' => 'dashicons-dashboard',
+		//'menu_position' => 99,
+		//'menu_icon' => 'dashicons-dashboard',
 		'supports' => array('title', 'editor'),
 		'hierarchical' => true,
 		'has_archive' => false,
@@ -22,6 +23,70 @@ function init_dashboard()
 	);
 
 	register_post_type('mf_custom_dashboard', $args);
+}
+
+function settings_custom_dashboard()
+{
+	$options_area = __FUNCTION__;
+
+	add_settings_section($options_area, "", $options_area."_callback", BASE_OPTIONS_PAGE);
+
+	$arr_settings = array();
+	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
+	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
+
+	show_settings_fields(array('area' => $options_area, 'settings' => $arr_settings));
+}
+
+function settings_custom_dashboard_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+
+	echo settings_header($setting_key, __("Custom Dashboard", 'lang_dashboard'));
+}
+
+function setting_panel_heading_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option($setting_key);
+
+	echo show_textfield(array('name' => $setting_key, 'value' => $option, 'placeholder' => __("Welcome", 'lang_dashboard')." [name]"));
+}
+
+function setting_remove_widgets_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option($setting_key);
+
+	$arr_widgets = get_option('dashboard_registered_widget');
+
+	$arr_data = array();
+
+	if(is_array($arr_widgets))
+	{
+		foreach($arr_widgets as $key => $value)
+		{
+			$arr_data[$key] = ($value != '' ? $value : $key);
+		}
+
+		echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'value' => $option));
+	}
+
+	else
+	{
+		echo "<em>".__("There are no widgets to remove", 'lang_dashboard')."</em>";
+	}
+}
+
+function menu_dashboard()
+{
+	$menu_root = 'mf_custom_dashboard/';
+	$menu_start = $menu_root.'list/index.php';
+	$menu_capability = 'edit_pages';
+
+	$menu_title = __("Customize", 'lang_dashboard');
+
+	add_submenu_page("index.php", $menu_title, $menu_title, $menu_capability, "edit.php?post_type=mf_custom_dashboard");
 }
 
 function disable_default_custom_dashboard()
@@ -198,59 +263,6 @@ function meta_boxes_custom_dashboard($meta_boxes)
 	);
 
 	return $meta_boxes;
-}
-
-function settings_custom_dashboard()
-{
-	$options_area = __FUNCTION__;
-
-	add_settings_section($options_area, "", $options_area."_callback", BASE_OPTIONS_PAGE);
-
-	$arr_settings = array();
-	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
-	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
-
-	show_settings_fields(array('area' => $options_area, 'settings' => $arr_settings));
-}
-
-function settings_custom_dashboard_callback()
-{
-	$setting_key = get_setting_key(__FUNCTION__);
-
-	echo settings_header($setting_key, __("Custom Dashboard", 'lang_dashboard'));
-}
-
-function setting_panel_heading_callback()
-{
-	$setting_key = get_setting_key(__FUNCTION__);
-	$option = get_option($setting_key);
-
-	echo show_textfield(array('name' => $setting_key, 'value' => $option, 'placeholder' => __("Welcome", 'lang_dashboard')." [name]"));
-}
-
-function setting_remove_widgets_callback()
-{
-	$setting_key = get_setting_key(__FUNCTION__);
-	$option = get_option($setting_key);
-
-	$arr_widgets = get_option('dashboard_registered_widget');
-
-	$arr_data = array();
-
-	if(is_array($arr_widgets))
-	{
-		foreach($arr_widgets as $key => $value)
-		{
-			$arr_data[$key] = ($value != '' ? $value : $key);
-		}
-
-		echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'value' => $option));
-	}
-
-	else
-	{
-		echo "<em>".__("There are no widgets to remove", 'lang_dashboard')."</em>";
-	}
 }
 
 function column_header_custom_dashboard($cols)

@@ -172,7 +172,7 @@ function add_widget_custom_dashboard()
 	$user_data = get_userdata(get_current_user_id());
 
 	$setting_panel_heading = get_option('setting_panel_heading');
-	$setting_panel_heading = str_replace("[name]", $user_data->first_name, $setting_panel_heading);
+	$setting_panel_heading = str_replace("[name]", ($user_data->first_name != '' ? $user_data->first_name : ucfirst($user_data->display_name)), $setting_panel_heading);
 
 	$plugin_include_url = plugin_dir_url(__FILE__);
 	$plugin_version = get_plugin_version(__FILE__);

@@ -3,13 +3,14 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.3.4
+Version: 3.3.5
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: http://frostkom.se
 Text Domain: lang_dashboard
 Domain Path: /lang
 
+Depends: Meta Box, MF Base
 GitHub Plugin URI: frostkom/mf_custom_dashboard
 */
 

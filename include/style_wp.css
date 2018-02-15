@@ -37,4 +37,10 @@
 		position: absolute;
 		right: 1em;
 	}
+
+		#dashboard-widgets .inside img
+		{
+			height: auto;
+			max-width: 100%;
+		}
 }

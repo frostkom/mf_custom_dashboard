@@ -14,8 +14,6 @@ function init_dashboard()
 		'show_in_menu' => false,
 		'show_in_nav_menus' => false,
 		'exclude_from_search' => true,
-		//'menu_position' => 99,
-		//'menu_icon' => 'dashicons-dashboard',
 		'supports' => array('title', 'editor'),
 		'hierarchical' => true,
 		'has_archive' => false,

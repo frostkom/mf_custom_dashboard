@@ -167,19 +167,6 @@ function add_widget_custom_dashboard()
 		update_option('dashboard_registered_widget', $arr_widgets);
 	}
 
-	$user_data = get_userdata(get_current_user_id());
-
-	$setting_panel_heading = get_option('setting_panel_heading');
-	$setting_panel_heading = str_replace("[name]", ($user_data->first_name != '' ? $user_data->first_name : ucfirst($user_data->display_name)), $setting_panel_heading);
-
-	$plugin_include_url = plugin_dir_url(__FILE__);
-	$plugin_version = get_plugin_version(__FILE__);
-
-	$setting_remove_widgets = get_option('setting_remove_widgets');
-
-	mf_enqueue_style('style_custom_dashboard', $plugin_include_url."style_wp.css", $plugin_version);
-	mf_enqueue_script('script_custom_dashboard', $plugin_include_url."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets), $plugin_version);
-
 	$meta_prefix = "mf_cd_";
 
 	$result = $wpdb->get_results("SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = 'mf_custom_dashboard' AND post_status = 'publish' ORDER BY menu_order ASC");

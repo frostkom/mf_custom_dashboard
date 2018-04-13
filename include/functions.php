@@ -3,9 +3,9 @@
 function init_dashboard()
 {
 	$labels = array(
-		'name' => _x(__("Custom Dashboard", 'lang_dashboard'), 'post type general name'),
-		'singular_name' => _x(__("Custom Dashboard", 'lang_dashboard'), 'post type singular name'),
-		'menu_name' => __("Custom Dashboard", 'lang_dashboard')
+		'name' => _x(__("Dashboard", 'lang_dashboard'), 'post type general name'),
+		'singular_name' => _x(__("Dashboard", 'lang_dashboard'), 'post type singular name'),
+		'menu_name' => __("Dashboard", 'lang_dashboard')
 	);
 
 	$args = array(
@@ -40,7 +40,7 @@ function settings_custom_dashboard_callback()
 {
 	$setting_key = get_setting_key(__FUNCTION__);
 
-	echo settings_header($setting_key, __("Custom Dashboard", 'lang_dashboard'));
+	echo settings_header($setting_key, __("Dashboard", 'lang_dashboard'));
 }
 
 function setting_panel_heading_callback()

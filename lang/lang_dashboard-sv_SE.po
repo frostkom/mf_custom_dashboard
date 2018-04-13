@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-15 08:50+0100\n"
+"POT-Creation-Date: 2018-04-13 17:57+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -19,71 +19,71 @@ msgstr ""
 #: ../include/functions.php:6
 #: ../include/functions.php:7
 #: ../include/functions.php:8
-#: ../include/functions.php:45
-msgid "Custom Dashboard"
-msgstr "Anpassa panel"
+#: ../include/functions.php:43
+msgid "Dashboard"
+msgstr "Panel"
 
-#: ../include/functions.php:35
+#: ../include/functions.php:33
 msgid "Heading"
 msgstr "Rubrik"
 
-#: ../include/functions.php:36
+#: ../include/functions.php:34
 msgid "Remove widgets"
 msgstr "Dölj widgets"
 
-#: ../include/functions.php:53
+#: ../include/functions.php:51
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: ../include/functions.php:77
+#: ../include/functions.php:75
 msgid "There are no widgets to remove"
 msgstr "Det finns inga widgets att dölja"
 
-#: ../include/functions.php:87
+#: ../include/functions.php:85
 msgid "Customize"
 msgstr "Anpassa"
 
-#: ../include/functions.php:217
-#: ../include/functions.php:226
+#: ../include/functions.php:202
+#: ../include/functions.php:211
 msgid "Choose here"
 msgstr "Välj här"
 
-#: ../include/functions.php:218
+#: ../include/functions.php:203
 msgid "Left"
 msgstr "Vänster"
 
-#: ../include/functions.php:219
+#: ../include/functions.php:204
 msgid "Right"
 msgstr "Höger"
 
-#: ../include/functions.php:227
+#: ../include/functions.php:212
 msgid "High"
 msgstr "Högt"
 
-#: ../include/functions.php:228
+#: ../include/functions.php:213
 msgid "Default"
 msgstr "Standard"
 
-#: ../include/functions.php:229
+#: ../include/functions.php:214
 msgid "Low"
 msgstr "Lågt"
 
-#: ../include/functions.php:239
+#: ../include/functions.php:224
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:245
-#: ../include/functions.php:272
+#: ../include/functions.php:230
+#: ../include/functions.php:257
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:251
-#: ../include/functions.php:273
+#: ../include/functions.php:236
+#: ../include/functions.php:258
 msgid "Column"
 msgstr "Kolumn"
 
-#: ../include/functions.php:257
-#: ../include/functions.php:274
+#: ../include/functions.php:242
+#: ../include/functions.php:259
 msgid "Priority"
 msgstr "Prioritet"
 

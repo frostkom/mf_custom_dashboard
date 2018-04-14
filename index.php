@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.3.9
+Version: 3.3.10
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: http://frostkom.se
@@ -26,7 +26,7 @@ if(is_admin())
 
 	add_action('init', 'init_dashboard');
 	add_action('admin_init', 'settings_custom_dashboard');
-	add_action('admin_init', array($obj_custom_dashboard, 'admin_init'));
+	add_action('admin_init', array($obj_custom_dashboard, 'admin_init'), 0);
 	add_action('admin_menu', 'menu_dashboard');
 
 	add_action('admin_menu', 'disable_default_custom_dashboard', 999);

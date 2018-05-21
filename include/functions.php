@@ -164,7 +164,7 @@ function add_widget_custom_dashboard()
 			}
 		}
 
-		update_option('dashboard_registered_widget', $arr_widgets);
+		update_option('dashboard_registered_widget', $arr_widgets, 'no');
 	}
 
 	$meta_prefix = "mf_cd_";

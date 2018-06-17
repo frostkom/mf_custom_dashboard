@@ -199,7 +199,7 @@ function add_widget_custom_dashboard()
 function get_columns_for_select()
 {
 	return array(
-		'' => "-- ".__("Choose here", 'lang_dashboard')." --",
+		'' => "-- ".__("Choose Here", 'lang_dashboard')." --",
 		'normal' => __("Left", 'lang_dashboard'),
 		'side' => __("Right", 'lang_dashboard'),
 	);
@@ -208,7 +208,7 @@ function get_columns_for_select()
 function get_priority_for_select()
 {
 	return array(
-		'' => "-- ".__("Choose here", 'lang_dashboard')." --",
+		'' => "-- ".__("Choose Here", 'lang_dashboard')." --",
 		'high' => __("High", 'lang_dashboard'),
 		'default' => __("Default", 'lang_dashboard'),
 		'low' => __("Low", 'lang_dashboard'),

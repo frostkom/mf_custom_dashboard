@@ -31,7 +31,8 @@ function settings_custom_dashboard()
 
 	$arr_settings = array();
 	$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
-	$arr_settings['setting_remove_widgets'] = __("Remove widgets", 'lang_dashboard');
+	$arr_settings['setting_remove_widgets'] = __("Remove Widgets", 'lang_dashboard');
+	$arr_settings['setting_panel_hide_empty_containers'] = __("Hide Empty Containers", 'lang_dashboard');
 
 	show_settings_fields(array('area' => $options_area, 'settings' => $arr_settings));
 }
@@ -74,6 +75,14 @@ function setting_remove_widgets_callback()
 	{
 		echo "<em>".__("There are no widgets to remove", 'lang_dashboard')."</em>";
 	}
+}
+
+function setting_panel_hide_empty_containers_callback()
+{
+	$setting_key = get_setting_key(__FUNCTION__);
+	$option = get_option($setting_key, 'yes');
+
+	echo show_select(array('data' => get_yes_no_for_select(), 'name' => $setting_key, 'value' => $option));
 }
 
 function menu_dashboard()

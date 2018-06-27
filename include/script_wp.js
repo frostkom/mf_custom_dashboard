@@ -27,10 +27,20 @@ jQuery(function($)
 		$('#' + dom_id).remove();
 	}
 
+	if(script_custom_dashboard.hide_empty_containers == 'yes')
+	{
+		var dom_obj = $("#dashboard-widgets");
+
+		dom_obj.find(".empty-container").parent(".postbox-container").remove();
+		
+		if(dom_obj.children(".postbox-container").length == 1)
+		{
+			dom_obj.addClass('hide_empty_containers');
+		}
+	}
+
 	if($('#dashboard-widgets .inside').length == 0)
 	{
-		$('#dashboard-widgets .empty-container').parent('.postbox-container').remove();
-
 		if(script_custom_dashboard.panel_heading != '' && $('#welcome-panel').length == 0 || $('#welcome-panel').hasClass('hidden'))
 		{
 			dom_h1.addClass('align_center');

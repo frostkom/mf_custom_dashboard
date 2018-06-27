@@ -21,6 +21,7 @@ class mf_custom_dashboard
 
 			$setting_panel_heading = get_option('setting_panel_heading');
 			$setting_remove_widgets = get_option('setting_remove_widgets');
+			$setting_panel_hide_empty_containers = get_option('setting_panel_hide_empty_containers');
 
 			if($setting_panel_heading != '')
 			{
@@ -28,7 +29,7 @@ class mf_custom_dashboard
 			}
 
 			mf_enqueue_style('style_custom_dashboard', $plugin_include_url."style_wp.css", $plugin_version);
-			mf_enqueue_script('script_custom_dashboard', $plugin_include_url."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets), $plugin_version);
+			mf_enqueue_script('script_custom_dashboard', $plugin_include_url."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets, 'hide_empty_containers' => $setting_panel_hide_empty_containers), $plugin_version);
 		}
 	}
 }

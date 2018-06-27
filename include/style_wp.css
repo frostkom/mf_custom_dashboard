@@ -21,10 +21,16 @@
 			width: 70%;
 		}
 
-	.postbox-container .empty-container:first-child
+	
+	#wpbody-content #dashboard-widgets.hide_empty_containers .postbox-container:first-child:last-child
+	{
+		width: 100%;
+	}
+
+	/*.postbox-container .empty-container:first-child
 	{
 		display: none;
-	}
+	}*/
 
 	#dashboard-widgets img
 	{

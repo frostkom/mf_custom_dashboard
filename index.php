@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.3.14
+Version: 3.3.15
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: http://frostkom.se
@@ -47,7 +47,7 @@ if(is_admin())
 	{
 		mf_uninstall_plugin(array(
 			'post_types' => array('mf_custom_dashboard'),
-			'options' => array('setting_panel_heading', 'setting_remove_widgets', 'setting_panel_quote'),
+			'options' => array('setting_panel_heading', 'setting_remove_widgets', 'setting_panel_hide_empty_containers', 'setting_panel_quote'),
 		));
 	}
 }

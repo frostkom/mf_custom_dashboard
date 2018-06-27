@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-13 17:57+0100\n"
+"POT-Creation-Date: 2018-06-27 13:09+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 #: ../include/functions.php:6
 #: ../include/functions.php:7
 #: ../include/functions.php:8
-#: ../include/functions.php:43
+#: ../include/functions.php:44
 msgid "Dashboard"
 msgstr "Panel"
 
@@ -28,105 +28,66 @@ msgid "Heading"
 msgstr "Rubrik"
 
 #: ../include/functions.php:34
-msgid "Remove widgets"
+msgid "Remove Widgets"
 msgstr "Dölj widgets"
 
-#: ../include/functions.php:51
+#: ../include/functions.php:35
+msgid "Hide Empty Containers"
+msgstr "Dölj tomma behållare"
+
+#: ../include/functions.php:52
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: ../include/functions.php:75
+#: ../include/functions.php:76
 msgid "There are no widgets to remove"
 msgstr "Det finns inga widgets att dölja"
 
-#: ../include/functions.php:85
+#: ../include/functions.php:94
 msgid "Customize"
 msgstr "Anpassa"
 
-#: ../include/functions.php:202
 #: ../include/functions.php:211
-msgid "Choose here"
+#: ../include/functions.php:220
+msgid "Choose Here"
 msgstr "Välj här"
 
-#: ../include/functions.php:203
+#: ../include/functions.php:212
 msgid "Left"
 msgstr "Vänster"
 
-#: ../include/functions.php:204
+#: ../include/functions.php:213
 msgid "Right"
 msgstr "Höger"
 
-#: ../include/functions.php:212
+#: ../include/functions.php:221
 msgid "High"
 msgstr "Högt"
 
-#: ../include/functions.php:213
+#: ../include/functions.php:222
 msgid "Default"
 msgstr "Standard"
 
-#: ../include/functions.php:214
+#: ../include/functions.php:223
 msgid "Low"
 msgstr "Lågt"
 
-#: ../include/functions.php:224
+#: ../include/functions.php:233
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:230
-#: ../include/functions.php:257
+#: ../include/functions.php:239
+#: ../include/functions.php:266
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:236
-#: ../include/functions.php:258
+#: ../include/functions.php:245
+#: ../include/functions.php:267
 msgid "Column"
 msgstr "Kolumn"
 
-#: ../include/functions.php:242
-#: ../include/functions.php:259
+#: ../include/functions.php:251
+#: ../include/functions.php:268
 msgid "Priority"
 msgstr "Prioritet"
 
-#~ msgid "I am so blessed to have you in my life."
-#~ msgstr "Jag är lyckligt lottad som har dig i mitt liv."
-
-#~ msgid "Well, you look nice today!"
-#~ msgstr "Wow, du ser strålande ut idag!"
-
-#~ msgid ""
-#~ "I will try not to disappoint you today, but if I do, please don't tell my "
-#~ "master."
-#~ msgstr ""
-#~ "Jag ska försöka att inte göra dig besviken, men om jag gör det, var snäll "
-#~ "och berätta inte för min ägare."
-
-#~ msgid "A day without sunshine is like, you know, night."
-#~ msgstr "En dag utan sol är som, du vet, natt."
-
-#~ msgid "My fake plants died because I did not pretend to water them."
-#~ msgstr "Mina låtsasväxter dog för att jag inte låtsades vattna dom."
-
-#~ msgid "Remember: no matter where you go, there you are."
-#~ msgstr "Kom ihåg: oavsett var du går, är du där."
-
-#~ msgid "Let's do something fun while we are here."
-#~ msgstr "Låt oss göra något roligt medan vi är här."
-
-#~ msgid "Thank God you are here, I have been so lonely."
-#~ msgstr "Tacka gudarna för att du är här, jag har varit så ensam."
-
-#~ msgid ""
-#~ "People who think they know everything are a great annoyance to those of "
-#~ "us who do."
-#~ msgstr ""
-#~ "Människor som tror att dom vet allt är så irriterande för oss som gör det."
-
-#~ msgid ""
-#~ "Having trouble finding someone? Try turning off the Internet and you will "
-#~ "probably hear from them."
-#~ msgstr ""
-#~ "Problem att hitta någon? Testa att stänga av Internet så kommer du "
-#~ "troligen höra var dom är."
-
-#~ msgid "Show quote"
-#~ msgstr "Visa citat"

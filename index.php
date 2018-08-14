@@ -6,7 +6,7 @@ Description:
 Version: 3.3.15
 Licence: GPLv2 or later
 Author: Martin Fors
-Author URI: http://frostkom.se
+Author URI: https://frostkom.se
 Text Domain: lang_dashboard
 Domain Path: /lang
 

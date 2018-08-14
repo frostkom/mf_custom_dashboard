@@ -32,7 +32,7 @@ jQuery(function($)
 		var dom_obj = $("#dashboard-widgets");
 
 		dom_obj.find(".empty-container").parent(".postbox-container").remove();
-		
+
 		if(dom_obj.children(".postbox-container").length == 1)
 		{
 			dom_obj.addClass('hide_empty_containers');

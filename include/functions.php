@@ -129,7 +129,7 @@ function widget_custom_dashboard($post, $args)
 
 			if(IS_ADMIN)
 			{
-				echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='far fa-edit fa-lg'></i></a>";
+				echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='fa fa-edit fa-lg'></i></a>";
 			}
 		}
 	}

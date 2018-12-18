@@ -65,7 +65,7 @@ function setting_remove_widgets_callback()
 	{
 		foreach($arr_widgets as $key => $value)
 		{
-			$arr_data[$key] = ($value != '' ? $value : $key);
+			$arr_data[$key] = ($value != '' ? strip_tags($value) : $key);
 		}
 
 		echo show_select(array('data' => $arr_data, 'name' => $setting_key."[]", 'value' => $option));

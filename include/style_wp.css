@@ -46,6 +46,11 @@
 		#dashboard-widgets .inside img
 		{
 			height: auto;
-			max-width: 100%;
+			/*max-width: 100%;*/ /* Is this a duplicate or needed for specificity? */
+		}
+
+		#dashboard-widgets .inside .flex_flow img
+		{
+			width: 100%; /* Needed for IE so that images do not overflow its container */
 		}
 }

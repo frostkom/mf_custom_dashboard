@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.3.25
+Version: 3.4.0
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: https://frostkom.se
@@ -17,24 +17,23 @@ GitHub Plugin URI: frostkom/mf_custom_dashboard
 if(is_admin())
 {
 	include_once("include/classes.php");
-	include_once("include/functions.php");
 
 	$obj_custom_dashboard = new mf_custom_dashboard();
 
 	register_activation_hook(__FILE__, 'activate_dashboard');
 	register_uninstall_hook(__FILE__, 'uninstall_dashboard');
 
-	add_action('init', 'init_dashboard');
-	add_action('admin_init', 'settings_custom_dashboard');
+	add_action('init', array($obj_custom_dashboard, 'init'));
+	add_action('admin_init', array($obj_custom_dashboard, 'settings_custom_dashboard'));
 	add_action('admin_init', array($obj_custom_dashboard, 'admin_init'), 0);
-	add_action('admin_menu', 'menu_dashboard');
+	add_action('admin_menu', array($obj_custom_dashboard, 'admin_menu'));
 
-	add_action('admin_menu', 'disable_default_custom_dashboard', 999);
-	add_action('wp_dashboard_setup', 'add_widget_custom_dashboard', 999);
-	add_action('rwmb_meta_boxes', 'meta_boxes_custom_dashboard');
+	add_action('admin_menu', array($obj_custom_dashboard, 'disable_default'), 999);
+	add_action('wp_dashboard_setup', array($obj_custom_dashboard, 'add_widget'), 999);
+	add_action('rwmb_meta_boxes', array($obj_custom_dashboard, 'rwmb_meta_boxes'));
 
-	add_filter('manage_mf_custom_dashboard_posts_columns', 'column_header_custom_dashboard', 5);
-	add_action('manage_mf_custom_dashboard_posts_custom_column', 'column_cell_custom_dashboard', 5, 2);
+	add_filter('manage_mf_custom_dashboard_posts_columns', array($obj_custom_dashboard, 'column_header'), 5);
+	add_action('manage_mf_custom_dashboard_posts_custom_column', array($obj_custom_dashboard, 'column_cell'), 5, 2);
 
 	load_plugin_textdomain('lang_dashboard', false, dirname(plugin_basename(__FILE__))."/lang/");
 

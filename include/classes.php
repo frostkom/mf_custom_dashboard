@@ -329,4 +329,11 @@ class mf_custom_dashboard
 			}
 		}
 	}
+
+	function filter_last_updated_post_types($array, $type)
+	{
+		$array[] = $this->post_type;
+
+		return $array;
+	}
 }

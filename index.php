@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description: 
-Version: 3.4.3
+Version: 3.4.4
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: https://frostkom.se
@@ -34,6 +34,8 @@ if(is_plugin_active("mf_base/index.php") && is_admin())
 
 	add_filter('manage_mf_custom_dashboard_posts_columns', array($obj_custom_dashboard, 'column_header'), 5);
 	add_action('manage_mf_custom_dashboard_posts_custom_column', array($obj_custom_dashboard, 'column_cell'), 5, 2);
+
+	add_filter('filter_last_updated_post_types', array($obj_custom_dashboard, 'filter_last_updated_post_types'), 10, 2);
 
 	load_plugin_textdomain('lang_dashboard', false, dirname(plugin_basename(__FILE__))."/lang/");
 

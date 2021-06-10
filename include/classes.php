@@ -219,7 +219,7 @@ class mf_custom_dashboard
 				{
 					foreach($widgets_2 as $key => $value)
 					{
-						if(!isset($arr_widgets[$key]) || $value['title'] != '')
+						if(!isset($arr_widgets[$key]) || isset($value['title']) && $value['title'] != '')
 						{
 							$arr_widgets[$key] = $value['title'];
 						}

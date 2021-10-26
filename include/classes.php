@@ -217,13 +217,21 @@ class mf_custom_dashboard
 			{
 				foreach($widgets_1 as $widgets_2)
 				{
-					foreach($widgets_2 as $key => $value)
+					if(is_array($widgets_2))
 					{
-						if(!isset($arr_widgets[$key]) || isset($value['title']) && $value['title'] != '')
+						foreach($widgets_2 as $key => $value)
 						{
-							$arr_widgets[$key] = $value['title'];
+							if(!isset($arr_widgets[$key]) || isset($value['title']) && $value['title'] != '')
+							{
+								$arr_widgets[$key] = $value['title'];
+							}
 						}
 					}
+
+					/*else
+					{
+						do_log("add_widget() -> Not an array: ".var_export($widgets_1, true)." -> ".var_export($widgets_2, true));
+					}*/
 				}
 			}
 

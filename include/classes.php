@@ -2,10 +2,13 @@
 
 class mf_custom_dashboard
 {
+	var $post_type = 'mf_custom_dashboard';
+	var $meta_prefix = 'mf_cd_';
+
 	function __construct()
 	{
-		$this->post_type = 'mf_custom_dashboard';
-		$this->meta_prefix = 'mf_cd_';
+		//$this->post_type = 'mf_custom_dashboard';
+		//$this->meta_prefix = 'mf_cd_';
 	}
 
 	function get_columns_for_select()

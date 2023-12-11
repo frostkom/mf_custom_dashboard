@@ -184,7 +184,7 @@ class mf_custom_dashboard
 			{
 				echo $post_content;
 
-				if(IS_ADMIN)
+				if(IS_ADMINISTRATOR)
 				{
 					echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='far fa-edit fa-lg'></i></a>";
 				}
@@ -196,7 +196,7 @@ class mf_custom_dashboard
 	{
 		global $wp_meta_boxes, $wpdb;
 
-		if(IS_ADMIN && is_array($wp_meta_boxes['dashboard']))
+		if(IS_ADMINISTRATOR && is_array($wp_meta_boxes['dashboard']))
 		{
 			$option = get_option('dashboard_registered_widget');
 

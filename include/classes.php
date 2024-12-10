@@ -5,11 +5,7 @@ class mf_custom_dashboard
 	var $post_type = 'mf_custom_dashboard';
 	var $meta_prefix = 'mf_cd_';
 
-	function __construct()
-	{
-		//$this->post_type = 'mf_custom_dashboard';
-		//$this->meta_prefix = 'mf_cd_';
-	}
+	function __construct(){}
 
 	function get_columns_for_select()
 	{
@@ -32,6 +28,8 @@ class mf_custom_dashboard
 
 	function init()
 	{
+		load_plugin_textdomain('lang_dashboard', false, str_replace("/include", "", dirname(plugin_basename(__FILE__)))."/lang/");
+
 		$labels = array(
 			'name' => _x(__("Dashboard", 'lang_dashboard'), 'post type general name'),
 			'singular_name' => _x(__("Dashboard", 'lang_dashboard'), 'post type singular name'),
@@ -312,9 +310,9 @@ class mf_custom_dashboard
 		return $cols;
 	}
 
-	function column_cell($col, $id)
+	function column_cell($col, $post_id)
 	{
-		$post_meta = get_post_meta($id, $this->meta_prefix.$col, true);
+		$post_meta = get_post_meta($post_id, $this->meta_prefix.$col, true);
 
 		if($post_meta != '')
 		{

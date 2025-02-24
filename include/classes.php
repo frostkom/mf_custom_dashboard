@@ -238,7 +238,7 @@ class mf_custom_dashboard
 				}
 			}
 
-			update_option('dashboard_registered_widget', $arr_widgets, 'no');
+			update_option('dashboard_registered_widget', $arr_widgets, false);
 		}
 
 		$result = $wpdb->get_results($wpdb->prepare("SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type = %s AND post_status = %s ORDER BY menu_order ASC", $this->post_type, 'publish'));

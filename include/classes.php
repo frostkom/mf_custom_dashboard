@@ -30,14 +30,14 @@ class mf_custom_dashboard
 	{
 		load_plugin_textdomain('lang_dashboard', false, str_replace("/include", "", dirname(plugin_basename(__FILE__)))."/lang/");
 
-		$labels = array(
-			'name' => _x(__("Dashboard", 'lang_dashboard'), 'post type general name'),
-			'singular_name' => _x(__("Dashboard", 'lang_dashboard'), 'post type singular name'),
-			'menu_name' => __("Dashboard", 'lang_dashboard')
-		);
-
-		$args = array(
-			'labels' => $labels,
+		// Post types
+		#######################
+		register_post_type($this->post_type, array(
+			'labels' => array(
+				'name' => _x(__("Dashboard", 'lang_dashboard'), 'post type general name'),
+				'singular_name' => _x(__("Dashboard", 'lang_dashboard'), 'post type singular name'),
+				'menu_name' => __("Dashboard", 'lang_dashboard')
+			),
 			'public' => false, // Previously true but changed to hide in sitemap.xml
 			'show_ui' => true,
 			'show_in_menu' => false,
@@ -47,9 +47,8 @@ class mf_custom_dashboard
 			'hierarchical' => true,
 			'has_archive' => false,
 			'capability_type' => 'page',
-		);
-
-		register_post_type($this->post_type, $args);
+		));
+		#######################
 	}
 
 	function settings_custom_dashboard()

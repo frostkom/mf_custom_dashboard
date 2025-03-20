@@ -251,7 +251,7 @@ class mf_custom_dashboard
 
 			if($post_permission == '' || current_user_can($post_permission))
 			{
-				$post_column = get_post_meta($post_id, $this->meta_prefix.'column', true);
+				/*$post_column = get_post_meta($post_id, $this->meta_prefix.'column', true);
 				$post_priority = get_post_meta($post_id, $this->meta_prefix.'priority', true);
 
 				if($post_column != '' && $post_priority != '')
@@ -260,9 +260,9 @@ class mf_custom_dashboard
 				}
 
 				else
-				{
+				{*/
 					wp_add_dashboard_widget("custom_dashboard_widget_".$post_id, $post_title, array($this, 'display_widget'), '', $post_id);
-				}
+				//}
 			}
 		}
 	}
@@ -282,7 +282,7 @@ class mf_custom_dashboard
 					'type' => 'select',
 					'options' => get_roles_for_select(array('add_choose_here' => true)),
 				),
-				array(
+				/*array(
 					'name' => __("Column", 'lang_dashboard'),
 					'id' => $this->meta_prefix.'column',
 					'type' => 'select',
@@ -293,7 +293,7 @@ class mf_custom_dashboard
 					'id' => $this->meta_prefix.'priority',
 					'type' => 'select',
 					'options' => $this->get_priority_for_select(),
-				),
+				),*/
 			)
 		);
 
@@ -305,8 +305,8 @@ class mf_custom_dashboard
 		unset($cols['date']);
 
 		$cols['permission'] = __("Lowest Permission", 'lang_dashboard');
-		$cols['column'] = __("Column", 'lang_dashboard');
-		$cols['priority'] = __("Priority", 'lang_dashboard');
+		/*$cols['column'] = __("Column", 'lang_dashboard');
+		$cols['priority'] = __("Priority", 'lang_dashboard');*/
 
 		return $cols;
 	}
@@ -325,7 +325,7 @@ class mf_custom_dashboard
 					echo $arr_roles[$post_meta];
 				break;
 
-				case 'column':
+				/*case 'column':
 					$arr_columns = $this->get_columns_for_select();
 
 					echo $arr_columns[$post_meta];
@@ -335,7 +335,7 @@ class mf_custom_dashboard
 					$arr_priority = $this->get_priority_for_select();
 
 					echo $arr_priority[$post_meta];
-				break;
+				break;*/
 			}
 		}
 	}

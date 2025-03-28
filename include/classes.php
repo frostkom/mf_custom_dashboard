@@ -34,8 +34,8 @@ class mf_custom_dashboard
 		#######################
 		register_post_type($this->post_type, array(
 			'labels' => array(
-				'name' => _x(__("Dashboard", 'lang_dashboard'), 'post type general name'),
-				'singular_name' => _x(__("Dashboard", 'lang_dashboard'), 'post type singular name'),
+				'name' => __("Dashboard", 'lang_dashboard'),
+				'singular_name' => __("Dashboard", 'lang_dashboard'),
 				'menu_name' => __("Dashboard", 'lang_dashboard')
 			),
 			'public' => false, // Previously true but changed to hide in sitemap.xml

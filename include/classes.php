@@ -157,10 +157,7 @@ class mf_custom_dashboard
 		{
 			foreach($option as $widget)
 			{
-				remove_meta_box($widget, 'dashboard', 'core');
-				/*remove_meta_box($widget, 'dashboard', 'advanced');
-				remove_meta_box($widget, 'dashboard', 'normal');
-				remove_meta_box($widget, 'dashboard', 'side');*/
+				remove_meta_box($widget, 'dashboard', 'core'); //advanced, normal, side
 			}
 		}
 	}

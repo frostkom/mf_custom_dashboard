@@ -297,24 +297,24 @@ class mf_custom_dashboard
 		return $meta_boxes;
 	}
 
-	function column_header($cols)
+	function column_header($columns)
 	{
-		unset($cols['date']);
+		unset($columns['date']);
 
-		$cols['permission'] = __("Lowest Permission", 'lang_dashboard');
-		/*$cols['column'] = __("Column", 'lang_dashboard');
-		$cols['priority'] = __("Priority", 'lang_dashboard');*/
+		$columns['permission'] = __("Lowest Permission", 'lang_dashboard');
+		/*$columns['column'] = __("Column", 'lang_dashboard');
+		$columns['priority'] = __("Priority", 'lang_dashboard');*/
 
-		return $cols;
+		return $columns;
 	}
 
-	function column_cell($col, $post_id)
+	function column_cell($column, $post_id)
 	{
-		$post_meta = get_post_meta($post_id, $this->meta_prefix.$col, true);
+		$post_meta = get_post_meta($post_id, $this->meta_prefix.$column, true);
 
 		if($post_meta != '')
 		{
-			switch($col)
+			switch($column)
 			{
 				case 'permission':
 					$arr_roles = get_roles_for_select(array('add_choose_here' => false));

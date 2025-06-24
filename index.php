@@ -3,7 +3,7 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description:
-Version: 3.5.3
+Version: 3.5.4
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: https://martinfors.se
@@ -20,10 +20,13 @@ if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') &
 
 	$obj_custom_dashboard = new mf_custom_dashboard();
 
+	add_action('init', array($obj_custom_dashboard, 'init'));
+
+	add_action('cron_base', array($obj_custom_dashboard, 'cron_base'), mt_rand(1, 10));
+
 	register_activation_hook(__FILE__, 'activate_dashboard');
 	register_uninstall_hook(__FILE__, 'uninstall_dashboard');
 
-	add_action('init', array($obj_custom_dashboard, 'init'));
 	add_action('admin_init', array($obj_custom_dashboard, 'settings_custom_dashboard'));
 	add_action('admin_init', array($obj_custom_dashboard, 'admin_init'), 0);
 	add_action('admin_menu', array($obj_custom_dashboard, 'admin_menu'));
@@ -39,18 +42,7 @@ if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') &
 
 	function activate_dashboard()
 	{
-		global $obj_custom_dashboard;
-
-		if(!isset($obj_custom_dashboard))
-		{
-			$obj_custom_dashboard = new mf_custom_dashboard();
-		}
-
 		require_plugin("meta-box/meta-box.php", "Meta Box");
-
-		mf_uninstall_plugin(array(
-			'meta' => array($obj_custom_dashboard->meta_prefix.'column', $obj_custom_dashboard->meta_prefix.'priority'),
-		));
 	}
 
 	function uninstall_dashboard()
@@ -61,7 +53,7 @@ if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') &
 
 		mf_uninstall_plugin(array(
 			'post_types' => array($obj_custom_dashboard->post_type),
-			'options' => array('setting_panel_heading', 'setting_remove_widgets', 'setting_panel_hide_empty_containers', 'setting_panel_quote'),
+			'options' => array('setting_panel_heading', 'setting_remove_widgets'),
 		));
 	}
 }

@@ -51,6 +51,22 @@ class mf_custom_dashboard
 		#######################
 	}
 
+	function cron_base()
+	{
+		$obj_cron = new mf_cron();
+		$obj_cron->start(__CLASS__);
+
+		if($obj_cron->is_running == false)
+		{
+			mf_uninstall_plugin(array(
+			'meta' => array($this->meta_prefix.'column', $this->meta_prefix.'priority'),
+			'options' => array('setting_panel_hide_empty_containers', 'setting_panel_quote'),
+		));
+		}
+
+		$obj_cron->end();
+	}
+
 	function settings_custom_dashboard()
 	{
 		$options_area = __FUNCTION__;
@@ -60,7 +76,7 @@ class mf_custom_dashboard
 		$arr_settings = array();
 		$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
 		$arr_settings['setting_remove_widgets'] = __("Remove Widgets", 'lang_dashboard');
-		$arr_settings['setting_panel_hide_empty_containers'] = __("Hide Empty Containers", 'lang_dashboard');
+		//$arr_settings['setting_panel_hide_empty_containers'] = __("Hide Empty Containers", 'lang_dashboard');
 
 		show_settings_fields(array('area' => $options_area, 'object' => $this, 'settings' => $arr_settings));
 	}
@@ -105,13 +121,13 @@ class mf_custom_dashboard
 		}
 	}
 
-	function setting_panel_hide_empty_containers_callback()
+	/*function setting_panel_hide_empty_containers_callback()
 	{
 		$setting_key = get_setting_key(__FUNCTION__);
 		$option = get_option($setting_key, 'yes');
 
 		echo show_select(array('data' => get_yes_no_for_select(), 'name' => $setting_key, 'value' => $option));
-	}
+	}*/
 
 	function admin_init()
 	{
@@ -126,7 +142,7 @@ class mf_custom_dashboard
 
 			$setting_panel_heading = get_option('setting_panel_heading');
 			$setting_remove_widgets = get_option('setting_remove_widgets');
-			$setting_panel_hide_empty_containers = get_option('setting_panel_hide_empty_containers');
+			//$setting_panel_hide_empty_containers = get_option('setting_panel_hide_empty_containers');
 
 			if($setting_panel_heading != '')
 			{
@@ -134,7 +150,7 @@ class mf_custom_dashboard
 			}
 
 			mf_enqueue_style('style_custom_dashboard', $plugin_include_url."style_wp.css");
-			mf_enqueue_script('script_custom_dashboard', $plugin_include_url."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets, 'hide_empty_containers' => $setting_panel_hide_empty_containers));
+			mf_enqueue_script('script_custom_dashboard', $plugin_include_url."script_wp.js", array('panel_heading' => $setting_panel_heading, 'remove_widgets' => $setting_remove_widgets)); //, 'hide_empty_containers' => $setting_panel_hide_empty_containers
 		}
 	}
 

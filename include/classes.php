@@ -42,6 +42,7 @@ class mf_custom_dashboard
 			'show_ui' => true,
 			'show_in_menu' => false,
 			'show_in_nav_menus' => false,
+			'show_in_rest' => false,
 			'exclude_from_search' => true,
 			'supports' => array('title', 'editor'),
 			'hierarchical' => true,

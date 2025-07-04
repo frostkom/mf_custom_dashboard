@@ -30,6 +30,16 @@
 		display: none;
 	}*/
 
+	#dashboard-widgets ol
+	{
+		margin-left: 1em;
+	}
+
+	#dashboard-widgets ol ol, #dashboard-widgets ul ul, #dashboard-widgets ol ul, #dashboard-widgets ul ol
+	{
+		margin: .5em 0 .5em 1em;
+	}
+
 	#dashboard-widgets img
 	{
 		max-width: 100%;

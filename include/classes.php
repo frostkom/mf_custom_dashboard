@@ -74,7 +74,7 @@ class mf_custom_dashboard
 
 		add_settings_section($options_area, "", array($this, $options_area."_callback"), BASE_OPTIONS_PAGE);
 
-		$arr_settings = array();
+		$arr_settings = [];
 		$arr_settings['setting_panel_heading'] = __("Heading", 'lang_dashboard');
 		$arr_settings['setting_remove_widgets'] = __("Remove Widgets", 'lang_dashboard');
 		//$arr_settings['setting_panel_hide_empty_containers'] = __("Hide Empty Containers", 'lang_dashboard');
@@ -104,7 +104,7 @@ class mf_custom_dashboard
 
 		$arr_widgets = get_option('dashboard_registered_widget');
 
-		$arr_data = array();
+		$arr_data = [];
 
 		if(is_array($arr_widgets))
 		{
@@ -210,7 +210,7 @@ class mf_custom_dashboard
 		{
 			$option = get_option('dashboard_registered_widget');
 
-			$arr_widgets = array();
+			$arr_widgets = [];
 
 			if(is_array($option))
 			{

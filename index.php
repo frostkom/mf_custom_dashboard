@@ -3,12 +3,14 @@
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
 Description:
-Version: 3.5.9
+Version: 3.5.10
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: https://martinfors.se
 Text Domain: lang_dashboard
 Domain Path: /lang
+
+Requires Plugins: meta-box
 */
 
 if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') && is_plugin_active("mf_base/index.php") && is_admin())
@@ -21,7 +23,6 @@ if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') &
 
 	add_action('cron_base', array($obj_custom_dashboard, 'cron_base'), mt_rand(1, 10));
 
-	register_activation_hook(__FILE__, 'activate_dashboard');
 	register_uninstall_hook(__FILE__, 'uninstall_dashboard');
 
 	add_action('admin_init', array($obj_custom_dashboard, 'settings_custom_dashboard'));
@@ -36,11 +37,6 @@ if(!function_exists('is_plugin_active') || function_exists('is_plugin_active') &
 	add_action('manage_mf_custom_dashboard_posts_custom_column', array($obj_custom_dashboard, 'column_cell'), 5, 2);
 
 	add_filter('filter_last_updated_post_types', array($obj_custom_dashboard, 'filter_last_updated_post_types'), 10, 2);
-
-	function activate_dashboard()
-	{
-		require_plugin("meta-box/meta-box.php", "Meta Box");
-	}
 
 	function uninstall_dashboard()
 	{

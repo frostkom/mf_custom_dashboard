@@ -38,12 +38,11 @@ class mf_custom_dashboard
 				'singular_name' => __("Dashboard", 'lang_dashboard'),
 				'menu_name' => __("Dashboard", 'lang_dashboard')
 			),
-			'public' => false, // Previously true but changed to hide in sitemap.xml
+			'public' => false,
 			'show_ui' => true,
 			'show_in_menu' => false,
 			'show_in_nav_menus' => false,
 			'show_in_rest' => false,
-			'exclude_from_search' => true,
 			'supports' => array('title', 'editor'),
 			'hierarchical' => true,
 			'has_archive' => false,

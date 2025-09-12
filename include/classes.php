@@ -36,7 +36,11 @@ class mf_custom_dashboard
 			'labels' => array(
 				'name' => __("Dashboard", 'lang_dashboard'),
 				'singular_name' => __("Dashboard", 'lang_dashboard'),
-				'menu_name' => __("Dashboard", 'lang_dashboard')
+				'menu_name' => __("Dashboard", 'lang_dashboard'),
+				'all_items' => __('List', 'lang_dashboard'),
+				'edit_item' => __('Edit', 'lang_dashboard'),
+				'view_item' => __('View', 'lang_dashboard'),
+				'add_new_item' => __('Add New', 'lang_dashboard'),
 			),
 			'public' => false,
 			'show_ui' => true,

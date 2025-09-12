@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 13:09+0100\n"
+"POT-Creation-Date: 2025-09-12 03:59+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Martin Fors\n"
 "Language-Team: \n"
@@ -16,78 +16,88 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../include/functions.php:6
-#: ../include/functions.php:7
-#: ../include/functions.php:8
-#: ../include/functions.php:44
-msgid "Dashboard"
-msgstr "Panel"
-
-#: ../include/functions.php:33
-msgid "Heading"
-msgstr "Rubrik"
-
-#: ../include/functions.php:34
-msgid "Remove Widgets"
-msgstr "Dölj widgets"
-
-#: ../include/functions.php:35
-msgid "Hide Empty Containers"
-msgstr "Dölj tomma behållare"
-
-#: ../include/functions.php:52
-msgid "Welcome"
-msgstr "Välkommen"
-
-#: ../include/functions.php:76
-msgid "There are no widgets to remove"
-msgstr "Det finns inga widgets att dölja"
-
-#: ../include/functions.php:94
-msgid "Customize"
-msgstr "Anpassa"
-
-#: ../include/functions.php:211
-#: ../include/functions.php:220
+#: ../include/classes.php:13
+#: ../include/classes.php:22
 msgid "Choose Here"
 msgstr "Välj här"
 
-#: ../include/functions.php:212
+#: ../include/classes.php:14
 msgid "Left"
 msgstr "Vänster"
 
-#: ../include/functions.php:213
+#: ../include/classes.php:15
 msgid "Right"
 msgstr "Höger"
 
-#: ../include/functions.php:221
+#: ../include/classes.php:23
 msgid "High"
 msgstr "Högt"
 
-#: ../include/functions.php:222
+#: ../include/classes.php:24
 msgid "Default"
 msgstr "Standard"
 
-#: ../include/functions.php:223
+#: ../include/classes.php:25
 msgid "Low"
 msgstr "Lågt"
 
-#: ../include/functions.php:233
+#: ../include/classes.php:37
+#: ../include/classes.php:38
+#: ../include/classes.php:39
+#: ../include/classes.php:92
+msgid "Dashboard"
+msgstr "Panel"
+
+#: ../include/classes.php:40
+msgid "List"
+msgstr "Lista"
+
+#: ../include/classes.php:41
+msgid "Edit"
+msgstr "Redigera"
+
+#: ../include/classes.php:42
+msgid "View"
+msgstr "Visa"
+
+#: ../include/classes.php:43
+msgid "Add New"
+msgstr "Lägg till ny"
+
+#: ../include/classes.php:81
+msgid "Heading"
+msgstr "Rubrik"
+
+#: ../include/classes.php:82
+msgid "Remove Widgets"
+msgstr "Dölj widgets"
+
+#: ../include/classes.php:100
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: ../include/classes.php:124
+msgid "There are no widgets to remove"
+msgstr "Det finns inga widgets att dölja"
+
+#: ../include/classes.php:167
+msgid "Customize"
+msgstr "Anpassa"
+
+#: ../include/classes.php:291
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ../include/functions.php:239
-#: ../include/functions.php:266
+#: ../include/classes.php:297
+#: ../include/classes.php:324
 msgid "Lowest Permission"
 msgstr "Lägsta behörighet"
 
-#: ../include/functions.php:245
-#: ../include/functions.php:267
-msgid "Column"
-msgstr "Kolumn"
+#~ msgid "Hide Empty Containers"
+#~ msgstr "Dölj tomma behållare"
 
-#: ../include/functions.php:251
-#: ../include/functions.php:268
-msgid "Priority"
-msgstr "Prioritet"
+#~ msgid "Column"
+#~ msgstr "Kolumn"
 
+#~ msgid "Priority"
+#~ msgstr "Prioritet"

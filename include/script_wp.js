@@ -27,17 +27,14 @@ jQuery(function($)
 		$('#' + dom_id).remove();
 	}
 
-	/*if(script_custom_dashboard.hide_empty_containers == 'yes')
-	{*/
-		var dom_obj = $("#dashboard-widgets");
+	var dom_obj = $("#dashboard-widgets");
 
-		dom_obj.find(".empty-container").parent(".postbox-container").remove();
+	dom_obj.find(".empty-container").parent(".postbox-container").remove();
 
-		if(dom_obj.children(".postbox-container").length == 1)
-		{
-			dom_obj.addClass('hide_empty_containers');
-		}
-	/*}*/
+	if(dom_obj.children(".postbox-container").length == 1)
+	{
+		dom_obj.addClass('hide_empty_containers');
+	}
 
 	if($('#dashboard-widgets .inside').length == 0)
 	{

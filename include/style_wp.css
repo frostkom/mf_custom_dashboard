@@ -25,11 +25,6 @@
 		width: 100%;
 	}
 
-	/*.postbox-container .empty-container:first-child
-	{
-		display: none;
-	}*/
-
 	#dashboard-widgets ol
 	{
 		margin-left: 1.5em;
@@ -55,11 +50,10 @@
 		#dashboard-widgets .inside img
 		{
 			height: auto;
-			/*max-width: 100%;*/ /* Is this a duplicate or needed for specificity? */
 		}
 
 		#dashboard-widgets .inside .flex_flow img
 		{
-			width: 100%; /* Needed for IE so that images do not overflow its container */
+			width: 100%;
 		}
 }

@@ -63,8 +63,8 @@ class mf_custom_dashboard
 		if($obj_cron->is_running == false)
 		{
 			mf_uninstall_plugin(array(
-				'meta' => array($this->meta_prefix.'column', $this->meta_prefix.'priority'),
 				'options' => array('setting_panel_hide_empty_containers', 'setting_panel_quote'),
+				'post_meta' => array($this->meta_prefix.'column', $this->meta_prefix.'priority'),
 			));
 		}
 

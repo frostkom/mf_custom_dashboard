@@ -2,7 +2,7 @@
 
 class mf_custom_dashboard
 {
-	var $post_type = 'mf_custom_dashboard';
+	var $post_type = __CLASS__;
 	var $meta_prefix = 'mf_cd_';
 
 	function __construct(){}
@@ -189,6 +189,8 @@ class mf_custom_dashboard
 
 				if(IS_ADMINISTRATOR)
 				{
+					do_action('load_font_awesome');
+
 					echo "<a href='".admin_url("post.php?post=".$post_id."&action=edit")."' class='editable'><i class='far fa-edit fa-lg'></i></a>";
 				}
 			}

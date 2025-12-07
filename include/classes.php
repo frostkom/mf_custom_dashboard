@@ -322,30 +322,37 @@ class mf_custom_dashboard
 
 	function column_cell($column, $post_id)
 	{
-		$post_meta = get_post_meta($post_id, $this->meta_prefix.$column, true);
+		global $post;
 
-		if($post_meta != '')
+		switch($post->post_type)
 		{
-			switch($column)
-			{
-				case 'permission':
-					$arr_roles = get_roles_for_select(array('add_choose_here' => false));
+			case $this->post_type:
+				$post_meta = get_post_meta($post_id, $this->meta_prefix.$column, true);
 
-					echo $arr_roles[$post_meta];
-				break;
+				if($post_meta != '')
+				{
+					switch($column)
+					{
+						case 'permission':
+							$arr_roles = get_roles_for_select(array('add_choose_here' => false));
 
-				/*case 'column':
-					$arr_columns = $this->get_columns_for_select();
+							echo $arr_roles[$post_meta];
+						break;
 
-					echo $arr_columns[$post_meta];
-				break;
+						/*case 'column':
+							$arr_columns = $this->get_columns_for_select();
 
-				case 'priority':
-					$arr_priority = $this->get_priority_for_select();
+							echo $arr_columns[$post_meta];
+						break;
 
-					echo $arr_priority[$post_meta];
-				break;*/
-			}
+						case 'priority':
+							$arr_priority = $this->get_priority_for_select();
+
+							echo $arr_priority[$post_meta];
+						break;*/
+					}
+				}
+			break;
 		}
 	}
 

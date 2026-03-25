@@ -47,7 +47,7 @@ class mf_custom_dashboard
 			'show_in_menu' => false,
 			'show_in_nav_menus' => false,
 			'show_in_rest' => false,
-			'supports' => array('title', 'editor'),
+			'supports' => array('title', 'editor', 'revisions'),
 			'hierarchical' => true,
 			'has_archive' => false,
 			'capability_type' => 'page',

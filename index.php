@@ -2,8 +2,8 @@
 /*
 Plugin Name: MF Custom Dashboard
 Plugin URI: https://github.com/frostkom/mf_custom_dashboard
-Description:
-Version: 3.5.18
+Description: Add your own info on the dashboard
+Version: 3.5.19
 Licence: GPLv2 or later
 Author: Martin Fors
 Author URI: https://martinfors.se

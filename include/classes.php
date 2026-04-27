@@ -96,7 +96,12 @@ class mf_custom_dashboard
 		$setting_key = get_setting_key(__FUNCTION__);
 		$option = get_option($setting_key);
 
-		echo show_textfield(array('name' => $setting_key, 'value' => $option, 'placeholder' => __("Welcome", 'lang_dashboard')." [name]"));
+		if($option == '')
+		{
+			$option = __("Welcome", 'lang_dashboard')." [name]";
+		}
+
+		echo show_textfield(array('name' => $setting_key, 'value' => $option));
 	}
 
 	function setting_remove_widgets_callback()
